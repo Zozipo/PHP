@@ -80,14 +80,14 @@
     <h1 class="text-center p-5">Реєстрація</h1>
     <div class="row">
         <div class="col-4 offset-2">
-            <div class="form-outline">
-                <label class="form-label" for="typeText">Прізвище</label>
+            <div class="form-outline mb-3">
+                <label class="form-label mb-3" for="typeText">Прізвище</label>
                 <input type="text" id="typeText" class="form-control"/>
             </div>
         </div>
         <div class="col-4">
-            <div class="form-outline">
-                <label class="form-label" for="typeText">Ім'я</label>
+            <div class="form-outline mb-3">
+                <label class="form-label mb-3" for="typeText">Ім'я</label>
                 <input type="text" id="typeText" class="form-control"/>
             </div>
         </div>
@@ -95,19 +95,17 @@
 
     <div class="row">
         <div class="col-4 offset-2">
-            <div class="form-outline">
-                <label class="form-label" for="typeText">Країна</label>
-                <select class="form-select" aria-label="Default select example">
+                <label class="form-label mb-3" for="typeText">Країна</label>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="font-size: 15px">
                     <option selected></option>
                     <option value="1">Україна</option>
                     <option value="2">Польща</option>
                     <option value="3">Молдова</option>
                 </select>
-            </div>
         </div>
         <div class="col-4">
             <div class="form-outline">
-                <label class="form-label" for="typeText">Електронна адреса</label>
+                <label class="form-label mb-3" for="typeText">Електронна адреса</label>
                 <input type="email" id="typeText" class="form-control"/>
             </div>
         </div>
@@ -116,6 +114,7 @@
     <div class="row">
 
         <div class="col-md-4 offset-2">
+            <label class="form-label mb-3" for="typeText">Аватар</label>
             <div class="image_area" style="width: 160px">
                 <form method="post" >
                     <label for="upload_image">
