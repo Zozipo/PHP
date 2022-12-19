@@ -24,7 +24,7 @@ include_once "connection_database.php";
         <div class="container py-5">
             <div class="row">
                 <?php
-                $sql = "SELECT * FROM tbl_products";
+                $sql = "SELECT p.id, p.name, p.price, pi.name as image from tbl_products p, tbl_product_images pi where p.id=pi.product_id and pi.priority=1;";
                 foreach ($dbh->query($sql) as $row) {
                     $id = $row['id'];
                     $image = $row['image'];
@@ -47,7 +47,7 @@ include_once "connection_database.php";
 
                             <div class="mb-2 d-flex justify-content-between">
                                 <h5 class="text-dark mb-0">' . $price . '₴</h5>
-                                <button type="button" class="btn btn-success">Купити</button>
+                                <a href="product.php?id='.$id.'" class="btn btn-success">Купити</a>
                             </div>
                         </div>
                     </div>
