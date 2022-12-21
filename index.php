@@ -34,7 +34,8 @@ include_once "connection_database.php";
                     echo '
                 <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
                     <div class="card">
-                         <div class="m-2 d-flex justify-content-end">
+                         <div class="m-2 d-flex justify-content-between">
+                         <a href="edit_product.php?id=' . $id . '" class="btn btn-primary">Редагувати</a>
                           <button type="button" class="btn btn-danger" onclick="deleteme('. $id .')" name="Delete">Видалити</button>
                         </div>
                         <img src="images/' . $image . '"
