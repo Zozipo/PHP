@@ -7,6 +7,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
 
 
     include($_SERVER['DOCUMENT_ROOT'].'/connection_database.php');
+
+    //Додаємо продукт
     $sql = "INSERT INTO `tbl_products` (`name`, `price`, `date_create`, `description`) VALUES (:name, :price, NOW(), :description);";
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':name', $name);
@@ -14,11 +16,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     $stmt->bindParam(':description', $description);
     $stmt->execute();
 
+    //Зберігаємо фото і інсертимо в базу
     include($_SERVER['DOCUMENT_ROOT'].'/lib/guidv4.php');
     $sql = "SELECT LAST_INSERT_ID() as id;";
     $item = $dbh->query($sql)->fetch();
     $insert_id = $item['id'];
-
     $images = $_POST['images'];
     $count=1;
     foreach ($images as $base64) {
@@ -38,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
     }
 
 
-
+//Переходимо в мейн
     header("Location: /");
     exit();
 

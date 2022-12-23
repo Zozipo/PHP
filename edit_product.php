@@ -1,10 +1,12 @@
 <?php
 include_once "connection_database.php";
+//Отримуємо id
 $id = $_GET['id'];
 $name = '';
 $price = '';
 $description = '';
 
+//По id дістаємо з бази продукт
 $sql = 'SELECT p.id, p.name, p.price, p.description 
         from tbl_products p
         where p.id=:id;';
@@ -16,6 +18,7 @@ if ($row = $sth->fetch()) {
     $price = $row['price'];
     $description = $row['description'];
 }
+//По id дістаємо з бази фото продукту
 $sql = "SELECT pi.id, pi.name, pi.priority 
         FROM tbl_product_images pi
         WHERE pi.product_id=:id
